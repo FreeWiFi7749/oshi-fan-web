@@ -21,7 +21,7 @@ const App = () => (
             <AppSidebar />
             <main className="flex-1">
               <div className="container">
-                <SidebarTrigger className="mb-4" />
+                <SidebarTrigger className="mb-4 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200" />
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/team" element={<Team />} />
