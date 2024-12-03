@@ -1,4 +1,4 @@
-import { User, Shield, Wrench } from "lucide-react";
+import { Server, Globe, Wrench } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useInView } from "react-intersection-observer";
 
@@ -14,7 +14,7 @@ const AdminIntro = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">運営メンバー紹介</h2>
           <div className="flex justify-center mb-4">
-            <User className="h-8 w-8 stroke-[1.5] text-primary" />
+            <Globe className="h-8 w-8 stroke-[1.5] text-primary" />
           </div>
         </div>
         <div 
@@ -30,7 +30,7 @@ const AdminIntro = () => {
           >
             <CardHeader>
               <div className="flex items-center justify-center mb-4">
-                <Shield className="h-8 w-8 stroke-[1.5] text-primary" />
+                <Server className="h-8 w-8 stroke-[1.5] text-primary" />
               </div>
               <CardTitle>サーバー管理人</CardTitle>
             </CardHeader>
@@ -61,7 +61,7 @@ const AdminIntro = () => {
           >
             <CardHeader>
               <div className="flex items-center justify-center mb-4">
-                <User className="h-8 w-8 stroke-[1.5] text-primary" />
+                <Globe className="h-8 w-8 stroke-[1.5] text-primary" />
               </div>
               <CardTitle>モデレーター</CardTitle>
             </CardHeader>
