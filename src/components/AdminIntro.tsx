@@ -14,7 +14,7 @@ const AdminIntro = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">運営メンバー紹介</h2>
           <div className="flex justify-center mb-4">
-            <User className="h-8 w-8 text-oshi-accent" />
+            <User className="h-8 w-8 stroke-[1.5] text-primary" />
           </div>
         </div>
         <div 
