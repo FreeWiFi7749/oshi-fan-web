@@ -39,7 +39,7 @@ const News = () => {
                     {new Date(item.created_at).toLocaleDateString('ja-JP')}
                   </div>
                   <div className="text-sm text-gray-500">
-                    投稿者: {item.staff_profiles?.username}
+                    投稿者: {item.staff_profiles?.username || '不明'}
                   </div>
                 </div>
                 <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
