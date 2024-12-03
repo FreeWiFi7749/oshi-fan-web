@@ -52,18 +52,18 @@ const AdminIntro = () => {
             </CardContent>
           </div>
           <div 
-            className={`glass-morphism p-8 transition-all duration-500 ${
+            className={`glass-morphism p-8 transition-all duration-500 max-w-sm w-full ${
               inView
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-20"
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            <CardHeader>
+            <CardHeader className="text-center">
               <div className="flex items-center justify-center mb-4">
                 <Globe className="h-8 w-8 stroke-[1.5] text-primary" />
               </div>
-              <CardTitle>モデレーター</CardTitle>
+              <CardTitle className="text-center">モデレーター</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-center">
@@ -82,18 +82,18 @@ const AdminIntro = () => {
             </CardContent>
           </div>
           <div 
-            className={`glass-morphism p-8 transition-all duration-500 ${
+            className={`glass-morphism p-8 transition-all duration-500 max-w-sm w-full ${
               inView
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-20"
             }`}
             style={{ transitionDelay: "400ms" }}
           >
-            <CardHeader>
+            <CardHeader className="text-center">
               <div className="flex items-center justify-center mb-4">
                 <Wrench className="h-8 w-8 stroke-[1.5] text-primary" />
               </div>
-              <CardTitle>開発担当</CardTitle>
+              <CardTitle className="text-center">開発担当</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-center">
