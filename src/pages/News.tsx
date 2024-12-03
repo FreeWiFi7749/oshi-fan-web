@@ -1,24 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 
 const News = () => {
   const { data: news, isLoading } = useQuery({
     queryKey: ['news'],
     queryFn: async () => {
-      // Mockデータを返す
-      return [
-        {
-          id: 1,
-          date: "2024-03-10",
-          title: "新機能のお知らせ",
-          content: "コミュニティ機能がアップデートされました。"
-        },
-        {
-          id: 2,
-          date: "2024-03-05",
-          title: "メンテナンスのお知らせ",
-          content: "定期メンテナンスを実施いたします。"
-        }
-      ];
+      const { data, error } = await supabase
+        .from('news')
+        .select(`
+          id,
+          title,
+          content,
+          created_at,
+          author_id,
+          staff_profiles:staff_profiles(username)
+        `)
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      return data;
     }
   });
 
@@ -38,9 +38,16 @@ const News = () => {
           <div className="max-w-3xl mx-auto space-y-6">
             {news?.map((item) => (
               <div key={item.id} className="glass-morphism p-6">
-                <div className="text-sm text-gray-500 mb-2">{item.date}</div>
+                <div className="flex justify-between items-center mb-2">
+                  <div className="text-sm text-gray-500">
+                    {new Date(item.created_at).toLocaleDateString('ja-JP')}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    投稿者: {item.staff_profiles?.username}
+                  </div>
+                </div>
                 <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-                <p className="text-gray-700">{item.content}</p>
+                <p className="text-gray-700 whitespace-pre-wrap">{item.content}</p>
               </div>
             ))}
           </div>

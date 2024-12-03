@@ -11,38 +11,27 @@ export type Database = {
     Tables: {
       news: {
         Row: {
-          author_id: string
           content: string
-          created_at: string
-          id: string
+          created_at: string | null
+          id: number
+          new_column_name: string | null
           title: string
-          updated_at: string
         }
         Insert: {
-          author_id: string
           content: string
-          created_at?: string
-          id?: string
+          created_at?: string | null
+          id?: never
+          new_column_name?: string | null
           title: string
-          updated_at?: string
         }
         Update: {
-          author_id?: string
           content?: string
-          created_at?: string
-          id?: string
+          created_at?: string | null
+          id?: never
+          new_column_name?: string | null
           title?: string
-          updated_at?: string
         }
-        Relationships: [
-          {
-            foreignKeyName: "news_author_id_fkey"
-            columns: ["author_id"]
-            isOneToOne: false
-            referencedRelation: "staff_profiles"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       staff_profiles: {
         Row: {
