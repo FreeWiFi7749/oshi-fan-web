@@ -25,12 +25,12 @@ const NavigationBar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
             {menuItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="text-white hover:opacity-80 transition-opacity text-sm font-medium tracking-wider"
+                className="px-4 py-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300 text-sm font-medium tracking-wider"
               >
                 {item.title}
               </Link>
@@ -40,19 +40,19 @@ const NavigationBar = () => {
           {/* Mobile Menu Button */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <button className="p-2 text-white hover:opacity-80 transition-opacity">
+              <button className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">メニューを開く</span>
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[250px]">
+            <SheetContent side="right" className="w-[250px] bg-white/95 backdrop-blur-lg">
               <nav className="flex flex-col gap-4 mt-8">
                 {menuItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors text-lg"
+                    className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-300 text-gray-800 text-center font-medium"
                   >
                     {item.title}
                   </Link>
