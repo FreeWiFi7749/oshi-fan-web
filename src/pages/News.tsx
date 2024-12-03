@@ -8,12 +8,8 @@ const News = () => {
       const { data, error } = await supabase
         .from('news')
         .select(`
-          id,
-          title,
-          content,
-          created_at,
-          author_id,
-          staff_profiles(username)
+          *,
+          staff_profiles (username)
         `)
         .order('created_at', { ascending: false });
 
