@@ -3,8 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/AppSidebar"
+import NavigationBar from "@/components/NavigationBar"
 import Index from "./pages/Index"
 import Team from "./pages/Team"
 
@@ -16,20 +15,17 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <SidebarProvider>
-          <div className="flex min-h-screen w-full">
-            <AppSidebar />
-            <main className="flex-1">
-              <div className="container">
-                <SidebarTrigger className="mb-4 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200" />
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/team" element={<Team />} />
-                </Routes>
-              </div>
-            </main>
-          </div>
-        </SidebarProvider>
+        <div className="min-h-screen w-full">
+          <NavigationBar />
+          <main className="pt-16">
+            <div className="container mx-auto px-4">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/team" element={<Team />} />
+              </Routes>
+            </div>
+          </main>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
