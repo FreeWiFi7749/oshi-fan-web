@@ -8,36 +8,40 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <div className="mb-8">
-              <h3 className="text-lg font-semibold mb-4">oshi.fan</h3>
-              <p className="text-sm text-gray-300">
+              <h3 className="text-2xl font-bold mb-4">oshi.fan</h3>
+              <p className="text-base text-gray-300">
                 ファン文化とお気に入りを祝福するMisskeyサーバー
               </p>
             </div>
-            <div className="space-y-2">
-              <Link to="/" className="block text-sm text-gray-300 hover:text-white">
-                ホーム
-              </Link>
-              <Link to="/team" className="block text-sm text-gray-300 hover:text-white">
-                チーム
-              </Link>
-              <a href="#" className="block text-sm text-gray-300 hover:text-white">
-                プライバシーポリシー
-              </a>
-              <a href="#" className="block text-sm text-gray-300 hover:text-white">
-                利用規約
-              </a>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <Link to="/" className="block text-lg font-medium text-gray-200 hover:text-white">
+                  ホーム
+                </Link>
+                <Link to="/team" className="block text-lg font-medium text-gray-200 hover:text-white">
+                  チーム
+                </Link>
+              </div>
+              <div className="space-y-2 pt-2">
+                <a href="#" className="block text-sm text-gray-400 hover:text-white">
+                  プライバシーポリシー
+                </a>
+                <a href="#" className="block text-sm text-gray-400 hover:text-white">
+                  利用規約
+                </a>
+              </div>
             </div>
           </div>
           
           <div>
             <div className="mb-8">
-              <h3 className="text-lg font-semibold mb-4">oshi.fan 公式</h3>
-              <div className="flex flex-wrap gap-4">
+              <h3 className="text-xl font-semibold mb-6">oshi.fan 公式</h3>
+              <div className="flex flex-wrap gap-6">
                 <a
                   href="https://github.com/oshi-fan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm text-gray-300 hover:text-white"
+                  className="inline-flex items-center text-base text-gray-200 hover:text-white"
                 >
                   <Github className="w-5 h-5 mr-2" />
                   GitHub
@@ -46,7 +50,7 @@ const Footer = () => {
                   href="#"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm text-gray-300 hover:text-white"
+                  className="inline-flex items-center text-base text-gray-200 hover:text-white"
                 >
                   <Youtube className="w-5 h-5 mr-2" />
                   YouTube
@@ -55,7 +59,7 @@ const Footer = () => {
                   href="#"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm text-gray-300 hover:text-white"
+                  className="inline-flex items-center text-base text-gray-200 hover:text-white"
                 >
                   <Twitter className="w-5 h-5 mr-2" />
                   X
