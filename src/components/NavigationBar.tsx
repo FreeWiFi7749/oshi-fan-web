@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Menu } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Link } from "react-router-dom"
 import {
   Sheet,
@@ -37,24 +37,41 @@ const NavigationBar = () => {
 
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <button className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 border border-white/40 shadow-lg">
-                  <Menu className="h-6 w-6" />
+                <button 
+                  className="relative p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 border border-white/40 shadow-lg group"
+                >
+                  <Menu className={`h-6 w-6 transition-all duration-300 ${isOpen ? 'opacity-0 rotate-90' : 'opacity-100'}`} />
+                  <X className={`h-6 w-6 absolute top-2 left-2 transition-all duration-300 ${isOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'}`} />
                   <span className="sr-only">メニューを開く</span>
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[250px] bg-white/95 backdrop-blur-lg">
-                <nav className="flex flex-col gap-4 mt-8">
-                  {menuItems.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      onClick={() => setIsOpen(false)}
-                      className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-300 text-gray-800 text-center font-medium border border-gray-200 shadow-md"
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
-                </nav>
+              <SheetContent 
+                side="right" 
+                className="w-full sm:w-[600px] bg-white transition-all duration-500 ease-out"
+              >
+                <div className="flex h-full">
+                  <div className="w-1/2 p-8 flex flex-col justify-center">
+                    <nav className="flex flex-col gap-8">
+                      {menuItems.map((item) => (
+                        <Link
+                          key={item.path}
+                          to={item.path}
+                          onClick={() => setIsOpen(false)}
+                          className="text-6xl font-bold text-gray-800 hover:text-gray-600 transition-colors duration-300"
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
+                    </nav>
+                  </div>
+                  <div 
+                    className="hidden sm:block w-1/2 bg-cover bg-center"
+                    style={{
+                      backgroundImage: "url('/placeholder.svg')",
+                      backgroundSize: 'cover',
+                    }}
+                  />
+                </div>
               </SheetContent>
             </Sheet>
           </div>
