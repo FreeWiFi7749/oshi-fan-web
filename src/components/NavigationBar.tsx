@@ -15,8 +15,10 @@ const NavigationBar = () => {
   useEffect(() => {
     const processImage = async () => {
       try {
-        // Fetch the image
-        const response = await fetch("https://images.frwi.net/data/images/adbd5795-9ef6-4129-b705-e4c66e00535d.png");
+        // Fetch the image with no-cors mode
+        const response = await fetch("https://images.frwi.net/data/images/adbd5795-9ef6-4129-b705-e4c66e00535d.png", {
+          mode: 'no-cors'
+        });
         const blob = await response.blob();
         
         // Load the image
