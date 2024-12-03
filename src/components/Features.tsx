@@ -4,23 +4,27 @@ const Features = () => {
   const features = [
     {
       icon: <Users className="h-8 w-8 text-oshi-accent" />,
-      title: "Passionate Community",
-      description: "Connect with fans who share your interests and enthusiasm",
+      title: "情熱的なコミュニティ",
+      description: "同じ興味を持つファン同士でつながりましょう",
+      engDescription: "Connect with fans who share your interests"
     },
     {
       icon: <Shield className="h-8 w-8 text-oshi-accent" />,
-      title: "Safe Space",
-      description: "A moderated environment where you can express your love freely",
+      title: "安全な空間",
+      description: "モデレーション付きの快適な環境で交流できます",
+      engDescription: "A moderated environment for safe interactions"
     },
     {
       icon: <Heart className="h-8 w-8 text-oshi-accent" />,
-      title: "Oshi First",
-      description: "Built specifically for fans to celebrate their favorites",
+      title: "推し中心",
+      description: "推しについて自由に語り合える場所です",
+      engDescription: "A space dedicated to celebrating your favorites"
     },
     {
       icon: <MessageCircle className="h-8 w-8 text-oshi-accent" />,
-      title: "Active Discussions",
-      description: "Engage in meaningful conversations about your interests",
+      title: "活発な議論",
+      description: "推しについて深い会話を楽しめます",
+      engDescription: "Engage in meaningful discussions"
     },
   ];
 
@@ -36,7 +40,8 @@ const Features = () => {
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-slate-600">{feature.description}</p>
+              <p className="text-slate-600 mb-1">{feature.description}</p>
+              <p className="text-xs text-slate-400">{feature.engDescription}</p>
             </div>
           ))}
         </div>

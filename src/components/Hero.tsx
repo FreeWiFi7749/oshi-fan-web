@@ -13,11 +13,12 @@ const Hero = () => {
           推し文化のためのMisskeyサーバー
         </p>
         <p className="text-lg mb-12 max-w-2xl mx-auto text-slate-600">
-          Share your passion, connect with fellow fans, and celebrate your favorite idols, characters, and artists together.
+          あなたの推しについて語り合い、ファン同士でつながりましょう。<br />
+          <span className="text-sm">Share your passion and connect with fellow fans</span>
         </p>
         <Button size="lg" className="bg-oshi-accent hover:bg-purple-700 transition-colors">
           <Heart className="mr-2 h-5 w-5" />
-          Join Our Community
+          コミュニティに参加する
         </Button>
       </div>
     </div>
