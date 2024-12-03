@@ -4,22 +4,22 @@ import { useInView } from "react-intersection-observer";
 const Features = () => {
   const features = [
     {
-      icon: <Users className="h-8 w-8 text-oshi-accent" />,
+      icon: <Users className="h-8 w-8 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient" />,
       title: "情熱的なコミュニティ",
       description: "同じ興味を持つファン同士でつながりましょう",
     },
     {
-      icon: <Shield className="h-8 w-8 text-oshi-accent" />,
+      icon: <Shield className="h-8 w-8 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient" />,
       title: "安全な空間",
       description: "モデレーション付きの快適な環境で交流できます",
     },
     {
-      icon: <Heart className="h-8 w-8 text-oshi-accent" />,
+      icon: <Heart className="h-8 w-8 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient" />,
       title: "推し中心",
       description: "推しについて自由に語り合える場所です",
     },
     {
-      icon: <MessageCircle className="h-8 w-8 text-oshi-accent" />,
+      icon: <MessageCircle className="h-8 w-8 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient" />,
       title: "活発な議論",
       description: "推しについて深い会話を楽しめます",
     },

@@ -14,7 +14,7 @@ const About = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">oshi.fanについて</h2>
           <div className="flex justify-center mb-4">
-            <Info className="h-8 w-8 text-oshi-accent" />
+            <Info className="h-8 w-8 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient" />
           </div>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto glass-morphism p-8 rounded-2xl">
             oshi.fanは、ファン文化を大切にするMisskeyサーバーです。
