@@ -128,5 +128,5 @@
 }
 
 .glass-morphism {
-  @apply backdrop-blur-md bg-white/30 border border-white/20 shadow-lg;
+  @apply backdrop-blur-md bg-white/30 border border-white/20 shadow-lg rounded-2xl transition-all duration-300 hover:bg-white/40 hover:shadow-xl;
 }

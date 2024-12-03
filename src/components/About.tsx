@@ -10,13 +10,13 @@ const About = () => {
           <div className="flex justify-center mb-4">
             <Info className="h-8 w-8 text-oshi-accent" />
           </div>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto glass-morphism p-6 rounded-lg">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto glass-morphism p-8 rounded-2xl">
             oshi.fanは、ファン文化を大切にするMisskeyサーバーです。
             あなたの「推し」について自由に語り合える場所を目指しています。
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="glass-morphism rounded-lg hover:shadow-lg transition-all duration-300">
+          <div className="glass-morphism p-8 hover:scale-105 transition-transform duration-300">
             <CardHeader>
               <CardTitle>サーバーの特徴</CardTitle>
             </CardHeader>
@@ -29,7 +29,7 @@ const About = () => {
               </ul>
             </CardContent>
           </div>
-          <div className="glass-morphism rounded-lg hover:shadow-lg transition-all duration-300">
+          <div className="glass-morphism p-8 hover:scale-105 transition-transform duration-300">
             <CardHeader>
               <CardTitle>利用について</CardTitle>
             </CardHeader>
