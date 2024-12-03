@@ -31,12 +31,12 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow animate-fade-up"
+              className="glass-morphism p-6 rounded-lg hover:shadow-xl transition-all duration-300 animate-fade-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-slate-600">{feature.description}</p>
+              <p className="text-slate-700">{feature.description}</p>
             </div>
           ))}
         </div>

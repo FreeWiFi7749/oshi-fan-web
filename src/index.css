@@ -97,5 +97,25 @@
 
   body {
     @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #fdfcfb 0%, #FFD1DC 100%);
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glass-morphism {
+  @apply backdrop-blur-md bg-white/30 border border-white/20 shadow-lg;
 }
