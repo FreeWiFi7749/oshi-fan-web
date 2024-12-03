@@ -122,6 +122,21 @@
   }
 }
 
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient {
+  animation: gradient-x 3s ease infinite;
+}
+
 .glass-morphism {
   @apply backdrop-blur-md bg-white/30 border border-white/20 shadow-lg rounded-2xl transition-all duration-300 hover:bg-white/40 hover:shadow-xl;
 }
