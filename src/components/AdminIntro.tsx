@@ -19,20 +19,20 @@ const AdminIntro = () => {
         </div>
         <div 
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
         >
           <div 
-            className={`glass-morphism p-8 transition-all duration-500 ${
+            className={`glass-morphism p-8 transition-all duration-500 max-w-sm w-full ${
               inView
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-20"
             }`}
           >
-            <CardHeader>
+            <CardHeader className="text-center">
               <div className="flex items-center justify-center mb-4">
                 <Server className="h-8 w-8 stroke-[1.5] text-primary" />
               </div>
-              <CardTitle>サーバー管理人</CardTitle>
+              <CardTitle className="text-center">サーバー管理人</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-center">
