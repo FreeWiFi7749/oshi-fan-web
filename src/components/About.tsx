@@ -1,5 +1,4 @@
 import { Info } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useInView } from "react-intersection-observer";
 
 const About = () => {
@@ -14,7 +13,7 @@ const About = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">oshi.fanについて</h2>
           <div className="flex justify-center mb-4">
-            <Info className="h-8 w-8 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient" />
+            <Info className="h-8 w-8 stroke-current bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient" />
           </div>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto glass-morphism p-8 rounded-2xl">
             oshi.fanは、ファン文化を大切にするMisskeyサーバーです。
@@ -32,17 +31,13 @@ const About = () => {
                 : "opacity-0 -translate-x-20"
             }`}
           >
-            <CardHeader>
-              <CardTitle>サーバーの特徴</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-gray-700">
-                <li>• 推し活動を応援する文化</li>
-                <li>• 丁寧なモデレーション</li>
-                <li>• 安定した運営体制</li>
-                <li>• コミュニティ主導の運営方針</li>
-              </ul>
-            </CardContent>
+            <h3 className="text-xl font-semibold mb-4">サーバーの特徴</h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>• 推し活動を応援する文化</li>
+              <li>• 丁寧なモデレーション</li>
+              <li>• 安定した運営体制</li>
+              <li>• コミュニティ主導の運営方針</li>
+            </ul>
           </div>
           <div 
             className={`glass-morphism p-8 transition-all duration-500 ${
@@ -52,17 +47,13 @@ const About = () => {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            <CardHeader>
-              <CardTitle>利用について</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-gray-700">
-                <li>• 完全無料で利用可能</li>
-                <li>• 簡単な登録手続き</li>
-                <li>• 多様な推し活動に対応</li>
-                <li>• 初心者でも安心の環境</li>
-              </ul>
-            </CardContent>
+            <h3 className="text-xl font-semibold mb-4">利用について</h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>• 完全無料で利用可能</li>
+              <li>• 簡単な登録手続き</li>
+              <li>• 多様な推し活動に対応</li>
+              <li>• 初心者でも安心の環境</li>
+            </ul>
           </div>
         </div>
       </div>
