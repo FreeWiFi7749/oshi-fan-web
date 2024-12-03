@@ -1,4 +1,5 @@
 import { Users, Shield, Heart, MessageCircle } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 
 const Features = () => {
   const features = [
@@ -24,18 +25,32 @@ const Features = () => {
     },
   ];
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <div className="py-20">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div 
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {features.map((feature, index) => (
             <div
               key={index}
-              className="glass-morphism p-8 hover:scale-105 animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`glass-morphism p-8 transition-all duration-500 ${
+                inView
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-20"
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="mb-4 flex justify-center">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-2 text-center">{feature.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-center">
+                {feature.title}
+              </h3>
               <p className="text-slate-700 text-center">{feature.description}</p>
             </div>
           ))}

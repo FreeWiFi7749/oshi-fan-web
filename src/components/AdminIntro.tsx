@@ -1,7 +1,13 @@
 import { User } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useInView } from "react-intersection-observer";
 
 const AdminIntro = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <div className="py-16">
       <div className="container mx-auto px-4">
@@ -11,8 +17,17 @@ const AdminIntro = () => {
             <User className="h-8 w-8 text-oshi-accent" />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="glass-morphism p-8 hover:scale-105 transition-transform duration-300">
+        <div 
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <div 
+            className={`glass-morphism p-8 transition-all duration-500 ${
+              inView
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-20"
+            }`}
+          >
             <CardHeader>
               <CardTitle>サーバー管理人</CardTitle>
             </CardHeader>
@@ -33,7 +48,14 @@ const AdminIntro = () => {
               </div>
             </CardContent>
           </div>
-          <div className="glass-morphism p-8 hover:scale-105 transition-transform duration-300">
+          <div 
+            className={`glass-morphism p-8 transition-all duration-500 ${
+              inView
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-20"
+            }`}
+            style={{ transitionDelay: "200ms" }}
+          >
             <CardHeader>
               <CardTitle>モデレーター</CardTitle>
             </CardHeader>
@@ -53,7 +75,14 @@ const AdminIntro = () => {
               </div>
             </CardContent>
           </div>
-          <div className="glass-morphism p-8 hover:scale-105 transition-transform duration-300">
+          <div 
+            className={`glass-morphism p-8 transition-all duration-500 ${
+              inView
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-20"
+            }`}
+            style={{ transitionDelay: "400ms" }}
+          >
             <CardHeader>
               <CardTitle>開発担当</CardTitle>
             </CardHeader>

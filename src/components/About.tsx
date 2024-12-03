@@ -1,7 +1,13 @@
 import { Info } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <div className="py-16">
       <div className="container mx-auto px-4">
@@ -15,8 +21,17 @@ const About = () => {
             あなたの「推し」について自由に語り合える場所を目指しています。
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="glass-morphism p-8 hover:scale-105 transition-transform duration-300">
+        <div 
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
+          <div 
+            className={`glass-morphism p-8 transition-all duration-500 ${
+              inView
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-20"
+            }`}
+          >
             <CardHeader>
               <CardTitle>サーバーの特徴</CardTitle>
             </CardHeader>
@@ -29,7 +44,14 @@ const About = () => {
               </ul>
             </CardContent>
           </div>
-          <div className="glass-morphism p-8 hover:scale-105 transition-transform duration-300">
+          <div 
+            className={`glass-morphism p-8 transition-all duration-500 ${
+              inView
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-20"
+            }`}
+            style={{ transitionDelay: "200ms" }}
+          >
             <CardHeader>
               <CardTitle>利用について</CardTitle>
             </CardHeader>
