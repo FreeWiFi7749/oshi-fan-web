@@ -1,7 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 
 const News = () => {
+  const queryClient = useQueryClient();
+  
   const { data: news, isLoading } = useQuery({
     queryKey: ['news'],
     queryFn: async () => {
@@ -15,7 +17,9 @@ const News = () => {
 
       if (error) throw error;
       return data;
-    }
+    },
+    // Add refetch interval to automatically update the news list
+    refetchInterval: 5000
   });
 
   return (
