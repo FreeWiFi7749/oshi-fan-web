@@ -9,14 +9,14 @@ const Hero = () => {
           oshi.fan
         </h1>
         <p className="text-2xl mb-6 text-oshi-accent font-medium">
-          推し文化のためのMisskeyサーバー
+          あなたの推しを見つけよう
         </p>
         <p className="text-lg mb-12 max-w-2xl mx-auto text-slate-600">
-          あなたの推しについて語り合い、ファン同士でつながりましょう。
+          推しについて語り合い、ファン同士でつながる。あなたの推し活をもっと楽しく。
         </p>
         <Button size="lg" className="bg-oshi-accent hover:bg-purple-700 transition-colors">
           <Heart className="mr-2 h-5 w-5" />
-          コミュニティに参加する
+          はじめる
         </Button>
       </div>
     </div>
