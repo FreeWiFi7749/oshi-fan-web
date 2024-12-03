@@ -24,28 +24,40 @@ const NavigationBar = () => {
             oshi.fan
           </Link>
 
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <button className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 border border-white/40 shadow-lg">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">メニューを開く</span>
-              </button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[250px] bg-white/95 backdrop-blur-lg">
-              <nav className="flex flex-col gap-4 mt-8">
-                {menuItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsOpen(false)}
-                    className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-300 text-gray-800 text-center font-medium border border-gray-200 shadow-md"
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <div className="flex items-center space-x-4">
+            {menuItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="px-4 py-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 text-sm font-medium tracking-wider border border-white/40 shadow-lg backdrop-blur-sm"
+              >
+                {item.title}
+              </Link>
+            ))}
+
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <button className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 border border-white/40 shadow-lg">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">メニューを開く</span>
+                </button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[250px] bg-white/95 backdrop-blur-lg">
+                <nav className="flex flex-col gap-4 mt-8">
+                  {menuItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-300 text-gray-800 text-center font-medium border border-gray-200 shadow-md"
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </nav>
