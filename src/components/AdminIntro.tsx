@@ -1,4 +1,4 @@
-import { User } from "lucide-react";
+import { User, Shield, Wrench } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useInView } from "react-intersection-observer";
 
@@ -29,6 +29,9 @@ const AdminIntro = () => {
             }`}
           >
             <CardHeader>
+              <div className="flex items-center justify-center mb-4">
+                <Shield className="h-8 w-8 stroke-[1.5] text-primary" />
+              </div>
               <CardTitle>サーバー管理人</CardTitle>
             </CardHeader>
             <CardContent>
@@ -57,6 +60,9 @@ const AdminIntro = () => {
             style={{ transitionDelay: "200ms" }}
           >
             <CardHeader>
+              <div className="flex items-center justify-center mb-4">
+                <User className="h-8 w-8 stroke-[1.5] text-primary" />
+              </div>
               <CardTitle>モデレーター</CardTitle>
             </CardHeader>
             <CardContent>
@@ -84,6 +90,9 @@ const AdminIntro = () => {
             style={{ transitionDelay: "400ms" }}
           >
             <CardHeader>
+              <div className="flex items-center justify-center mb-4">
+                <Wrench className="h-8 w-8 stroke-[1.5] text-primary" />
+              </div>
               <CardTitle>開発担当</CardTitle>
             </CardHeader>
             <CardContent>
