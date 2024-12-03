@@ -12,9 +12,8 @@ const NavigationBar = () => {
 
   const menuItems = [
     { title: "ABOUT", path: "/about" },
-    { title: "TALENT", path: "/team" },
+    { title: "TEAM", path: "/team" },
     { title: "NEWS", path: "/news" },
-    { title: "AUDITION", path: "/moderators" },
   ]
 
   return (
