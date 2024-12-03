@@ -123,18 +123,31 @@
 }
 
 @keyframes gradient-x {
-  0%, 100% {
+  0% {
     background-size: 200% 200%;
-    background-position: left center;
+    background-position: 0% 50%;
+  }
+  25% {
+    background-size: 200% 200%;
+    background-position: 100% 50%;
   }
   50% {
     background-size: 200% 200%;
-    background-position: right center;
+    background-position: 100% 100%;
+  }
+  75% {
+    background-size: 200% 200%;
+    background-position: 0% 100%;
+  }
+  100% {
+    background-size: 200% 200%;
+    background-position: 0% 50%;
   }
 }
 
 .animate-gradient {
-  animation: gradient-x 3s ease infinite;
+  background-size: 300% 300%;
+  animation: gradient-x 6s ease infinite;
 }
 
 .glass-morphism {

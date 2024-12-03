@@ -8,7 +8,7 @@ const Hero = () => {
         <h1 className="text-4xl font-bold mb-4">
           oshi.fan
         </h1>
-        <p className="text-2xl mb-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient font-medium">
+        <p className="text-2xl mb-6 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient font-medium">
           あなたの推しを見つけよう
         </p>
         <p className="text-lg mb-12 max-w-2xl mx-auto text-slate-600">
