@@ -7,6 +7,12 @@ import NavigationBar from "@/components/NavigationBar"
 import Footer from "@/components/Footer"
 import Index from "./pages/Index"
 import Team from "./pages/Team"
+import About from "./pages/About"
+import News from "./pages/News"
+import Moderators from "./pages/Moderators"
+import Privacy from "./pages/Privacy"
+import FAQ from "./pages/FAQ"
+import Guidelines from "./pages/Guidelines"
 
 const queryClient = new QueryClient()
 
@@ -23,6 +29,12 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/team" element={<Team />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/moderators" element={<Moderators />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/guidelines" element={<Guidelines />} />
               </Routes>
             </div>
           </main>
