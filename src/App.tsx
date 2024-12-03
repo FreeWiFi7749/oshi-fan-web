@@ -13,6 +13,7 @@ import Moderators from "./pages/Moderators"
 import Privacy from "./pages/Privacy"
 import FAQ from "./pages/FAQ"
 import Guidelines from "./pages/Guidelines"
+import StaffNews from "./pages/staff/StaffNews"
 
 const queryClient = new QueryClient()
 
@@ -35,6 +36,7 @@ const App = () => (
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/guidelines" element={<Guidelines />} />
+                <Route path="/staff/:role/:username/news" element={<StaffNews />} />
               </Routes>
             </div>
           </main>
