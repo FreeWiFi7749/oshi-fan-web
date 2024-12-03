@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Link } from "react-router-dom"
 import {
@@ -6,44 +6,10 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { removeBackground, loadImage } from "@/utils/imageUtils"
+import { supabase } from "@/integrations/supabase/client"
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [processedImageUrl, setProcessedImageUrl] = useState<string>("");
-
-  useEffect(() => {
-    const processImage = async () => {
-      try {
-        // Fetch the image with no-cors mode
-        const response = await fetch("https://images.frwi.net/data/images/adbd5795-9ef6-4129-b705-e4c66e00535d.png", {
-          mode: 'no-cors'
-        });
-        const blob = await response.blob();
-        
-        // Load the image
-        const img = await loadImage(blob);
-        
-        // Remove background
-        const processedBlob = await removeBackground(img);
-        
-        // Create URL for the processed image
-        const processedUrl = URL.createObjectURL(processedBlob);
-        setProcessedImageUrl(processedUrl);
-      } catch (error) {
-        console.error("Error processing image:", error);
-      }
-    };
-
-    processImage();
-
-    // Cleanup
-    return () => {
-      if (processedImageUrl) {
-        URL.revokeObjectURL(processedImageUrl);
-      }
-    };
-  }, []);
 
   const menuItems = [
     { title: "ABOUT", path: "/about" },
@@ -100,11 +66,7 @@ const NavigationBar = () => {
                     </nav>
                   </div>
                   <div 
-                    className="hidden sm:block w-1/2 bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url('${processedImageUrl || '/placeholder.svg'}')`,
-                      backgroundSize: 'cover',
-                    }}
+                    className="hidden sm:block w-1/2 bg-[url('/placeholder.svg')] bg-cover bg-center"
                   />
                 </div>
               </SheetContent>
