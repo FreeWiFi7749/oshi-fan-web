@@ -43,7 +43,7 @@ const News = () => {
                   </div>
                 </div>
                 <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-                <p className="text-gray-700 whitespace-pre-wrap">{item.content}</p>
+                <p className="text-gray-700 whitespace-pre-wrap">{item.content.replace(/\\n/g, '\n')}</p>
               </div>
             ))}
           </div>
