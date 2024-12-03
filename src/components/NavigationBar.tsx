@@ -24,22 +24,8 @@ const NavigationBar = () => {
             oshi.fan
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
-            {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="px-4 py-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 text-sm font-medium tracking-wider border border-white/40 shadow-lg backdrop-blur-sm"
-              >
-                {item.title}
-              </Link>
-            ))}
-          </div>
-          
-          {/* Mobile Menu Button */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild>
               <button className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 border border-white/40 shadow-lg">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">メニューを開く</span>
