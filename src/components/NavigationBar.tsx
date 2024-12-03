@@ -35,14 +35,6 @@ const NavigationBar = () => {
                 {item.title}
               </Link>
             ))}
-            <Link
-              to="https://shop.oshi.fan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#00B7EE] text-white px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              OFFICIAL SHOP
-            </Link>
           </div>
           
           {/* Mobile Menu Button */}
@@ -65,15 +57,6 @@ const NavigationBar = () => {
                     {item.title}
                   </Link>
                 ))}
-                <Link
-                  to="https://shop.oshi.fan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsOpen(false)}
-                  className="px-4 py-2 bg-[#00B7EE] text-white rounded-md text-lg text-center"
-                >
-                  OFFICIAL SHOP
-                </Link>
               </nav>
             </SheetContent>
           </Sheet>
