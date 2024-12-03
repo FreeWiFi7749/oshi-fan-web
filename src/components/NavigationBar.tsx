@@ -47,17 +47,17 @@ const NavigationBar = () => {
               </SheetTrigger>
               <SheetContent 
                 side="right" 
-                className="w-full sm:w-[600px] bg-white transition-all duration-500 ease-out"
+                className="w-screen h-screen !max-w-none !p-0 bg-white transition-all duration-500 ease-out"
               >
                 <div className="flex h-full">
-                  <div className="w-1/2 p-8 flex flex-col justify-center">
-                    <nav className="flex flex-col gap-8">
+                  <div className="w-1/2 p-12 flex flex-col justify-center">
+                    <nav className="flex flex-col gap-12">
                       {menuItems.map((item) => (
                         <Link
                           key={item.path}
                           to={item.path}
                           onClick={() => setIsOpen(false)}
-                          className="text-6xl font-bold text-gray-800 hover:text-gray-600 transition-colors duration-300"
+                          className="text-7xl font-bold text-gray-800 hover:text-gray-600 transition-colors duration-300"
                         >
                           {item.title}
                         </Link>
