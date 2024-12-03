@@ -13,7 +13,7 @@ const News = () => {
           content,
           created_at,
           author_id,
-          staff_profiles:staff_profiles(username)
+          staff_profiles(username)
         `)
         .order('created_at', { ascending: false });
 
