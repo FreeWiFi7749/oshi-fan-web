@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Link } from "react-router-dom"
 import {
@@ -10,6 +10,26 @@ import { supabase } from "@/integrations/supabase/client"
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [backgroundImageUrl, setBackgroundImageUrl] = useState<string>("/placeholder.svg");
+
+  useEffect(() => {
+    const fetchBackgroundImage = async () => {
+      try {
+        const { data: { publicUrl } } = supabase
+          .storage
+          .from('navigation-images')
+          .getPublicUrl('navigation-bg.png');
+          
+        if (publicUrl) {
+          setBackgroundImageUrl(publicUrl);
+        }
+      } catch (error) {
+        console.error("Error fetching background image:", error);
+      }
+    };
+
+    fetchBackgroundImage();
+  }, []);
 
   const menuItems = [
     { title: "ABOUT", path: "/about" },
@@ -66,7 +86,8 @@ const NavigationBar = () => {
                     </nav>
                   </div>
                   <div 
-                    className="hidden sm:block w-1/2 bg-[url('/placeholder.svg')] bg-cover bg-center"
+                    className="hidden sm:block w-1/2 bg-cover bg-center"
+                    style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
                   />
                 </div>
               </SheetContent>
