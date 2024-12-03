@@ -29,7 +29,7 @@ const NavigationBar = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className="px-4 py-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 text-sm font-medium tracking-wider border border-white/40 shadow-lg backdrop-blur-sm"
+                className="hidden md:block px-4 py-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 text-sm font-medium tracking-wider border border-white/40 shadow-lg backdrop-blur-sm"
               >
                 {item.title}
               </Link>
