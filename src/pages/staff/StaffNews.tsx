@@ -1,11 +1,9 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import NewsForm from "@/components/staff/NewsForm";
 import NewsList from "@/components/staff/NewsList";
+import { supabase } from "@/integrations/supabase/client";
 
 // スタッフメンバーの検証
 const validateStaffMember = (role: string, username: string) => {
@@ -33,6 +31,29 @@ const StaffNews = () => {
     return <Navigate to="/" replace />;
   }
 
+  // Fetch staff profile
+  const { data: staffProfile, isLoading: isLoadingProfile } = useQuery({
+    queryKey: ['staffProfile', username],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('staff_profiles')
+        .select('id')
+        .eq('username', username)
+        .single();
+
+      if (error) throw error;
+      return data;
+    }
+  });
+
+  if (isLoadingProfile) {
+    return <div className="min-h-screen bg-gradient-to-b from-oshi-purple/20 to-white py-20">
+      <div className="container mx-auto px-4 text-center">
+        読み込み中...
+      </div>
+    </div>;
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-oshi-purple/20 to-white py-20">
       <div className="container mx-auto px-4">
@@ -45,7 +66,7 @@ const StaffNews = () => {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <NewsForm />
+          {staffProfile && <NewsForm authorId={staffProfile.id} />}
           <div className="mt-12">
             <NewsList />
           </div>
