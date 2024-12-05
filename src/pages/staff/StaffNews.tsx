@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import { NewsForm } from "@/components/staff/NewsForm";
-import { NewsList } from "@/components/staff/NewsList";
+import NewsForm from "@/components/staff/NewsForm";
+import NewsList from "@/components/staff/NewsList";
 import { useEffect, useState } from "react";
 
 const StaffNews = () => {
