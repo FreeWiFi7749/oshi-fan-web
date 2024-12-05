@@ -50,7 +50,7 @@ const NavigationBar = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className="hidden md:block px-4 py-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 text-sm font-medium tracking-wider border border-white/40 shadow-lg backdrop-blur-sm"
+                className="hidden md:block px-4 py-2 rounded-full bg-oshi-accent/80 text-white hover:bg-oshi-accent transition-all duration-300 text-sm font-medium tracking-wider border border-white/40 shadow-lg backdrop-blur-sm"
               >
                 {item.title}
               </Link>
@@ -59,7 +59,7 @@ const NavigationBar = () => {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <button 
-                  className="relative p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 border border-white/40 shadow-lg group"
+                  className="relative p-2 rounded-full bg-oshi-accent/80 text-white hover:bg-oshi-accent transition-all duration-300 border border-white/40 shadow-lg group"
                 >
                   <Menu className={`h-6 w-6 transition-all duration-300 ${isOpen ? 'opacity-0 rotate-90' : 'opacity-100'}`} />
                   <X className={`h-6 w-6 absolute top-2 left-2 transition-all duration-300 ${isOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'}`} />
