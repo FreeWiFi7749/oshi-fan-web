@@ -41,10 +41,12 @@ const AdminIntro = () => {
                   alt="管理人のアバター"
                   className="w-24 h-24 rounded-full mx-auto mb-4"
                 />
-                <h3 className="font-bold mb-2">ゆうき</h3>
+                <h3 className="font-bold mb-2">FreeWiFiTech</h3>
                 <p className="text-gray-600">
                   oshi.fanの立ち上げメンバー。
-                  推し活動歴10年以上の経験を活かし、
+                  ホロライブ推し歴6年以上の経験や
+                  Discordコミュニティ運営
+                  の経験を活かし、
                   ファンの皆さんが安心して交流できる
                   場所を作ることを目指しています。
                 </p>
@@ -72,7 +74,7 @@ const AdminIntro = () => {
                   alt="モデレーターのアバター"
                   className="w-24 h-24 rounded-full mx-auto mb-4"
                 />
-                <h3 className="font-bold mb-2">さくら</h3>
+                <h3 className="font-bold mb-2">俺</h3>
                 <p className="text-gray-600">
                   コミュニティの健全な運営をサポート。
                   ユーザーの皆さんが快適に過ごせる
@@ -102,7 +104,7 @@ const AdminIntro = () => {
                   alt="開発担当のアバター"
                   className="w-24 h-24 rounded-full mx-auto mb-4"
                 />
-                <h3 className="font-bold mb-2">たろう</h3>
+                <h3 className="font-bold mb-2">Takpika</h3>
                 <p className="text-gray-600">
                   サーバーの技術面を担当。
                   安定したサービス提供と
